@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  ros2-dev:
+    build:
+      context: .devcontainer
+      dockerfile: Dockerfile
+      args:
+        USERNAME: ros
+        USER_UID: 1000
+        USER_GID: 1000
+    container_name: ros2-humble-dev
+    network_mode: host
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - .:/home/ros/ros2_ws
+    working_dir: /home/ros/ros2_ws
+    user: ros
+    stdin_open: true
+    tty: true
