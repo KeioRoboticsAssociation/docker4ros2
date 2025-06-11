@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>hello_py</name>
+  <version>0.0.0</version>
+  <description>Simple hello world example package.</description>
+  <maintainer email="maintainer@example.com">Maintainer</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+</package>
